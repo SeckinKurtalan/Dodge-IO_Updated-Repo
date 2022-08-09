@@ -37,7 +37,7 @@ public class GunSpawnGenerator : MonoBehaviour
         distanceBetweenVectors = Vector3.Distance(randomPlace, oldTransform);
         while(distanceBetweenVectors < 4f)
         {
-            randomPlace = new Vector3(Random.Range(spawnAreas[randomAreaIndex].transform.position.x - 35, spawnAreas[randomAreaIndex].transform.position.x + 35), 11f, Random.Range(spawnAreas[randomAreaIndex].transform.position.z - 35, spawnAreas[randomAreaIndex].transform.position.z + 35));
+            randomPlace = new Vector3(Random.Range(spawnAreas[randomAreaIndex].transform.position.x - 100, spawnAreas[randomAreaIndex].transform.position.x + 100), 11f, Random.Range(spawnAreas[randomAreaIndex].transform.position.z - 100, spawnAreas[randomAreaIndex].transform.position.z + 100));
             distanceBetweenVectors = Vector3.Distance(randomPlace, oldTransform);
         }
         Instantiate(guns[randomGun], randomPlace,Quaternion.identity);

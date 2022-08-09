@@ -33,19 +33,19 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 addedPos = new Vector3(horizontal * speed * Time.deltaTime, 0, vertical * speed * Time.deltaTime);
         transform.Translate(addedPos,Space.Self);
-        if(transform.position.z < -98)
+        if(transform.position.z < -250)
         {
             player.AddForce(Vector3.forward * boundPusherForcePower);
         }
-        else if(transform.position.z > 98)
+        else if(transform.position.z > 250)
         {
             player.AddForce(Vector3.back * boundPusherForcePower);
         }
-        else if (transform.position.x < -98)
+        else if (transform.position.x < -250)
         {
             player.AddForce(Vector3.right * boundPusherForcePower);
         }
-        else if (transform.position.x > 98)
+        else if (transform.position.x > 250)
         {
             player.AddForce(Vector3.left * boundPusherForcePower);
         }
