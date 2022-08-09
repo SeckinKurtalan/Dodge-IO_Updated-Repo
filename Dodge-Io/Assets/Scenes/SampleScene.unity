@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2861c8ba0e131b42ad4018de4345f5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverControllerScript: {fileID: 643829820}
+  gameOverControllerScript: {fileID: 0}
   GameOverPanel: {fileID: 110277761}
 --- !u!114 &72628554
 MonoBehaviour:
@@ -1528,14 +1528,14 @@ GameObject:
   - component: {fileID: 643829815}
   - component: {fileID: 643829819}
   - component: {fileID: 643829814}
-  - component: {fileID: 643829820}
+  - component: {fileID: 643829818}
   m_Layer: 0
   m_Name: HitZone
   m_TagString: 'HitZone '
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &643829813
 Transform:
   m_ObjectHideFlags: 0
@@ -2365,6 +2365,20 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &643829818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643829812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4cb446ecf5f59f41bced21f2fe23c06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1234501705}
+  GameOverStatus: 0
 --- !u!65 &643829819
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2376,22 +2390,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000002, y: 1.103242, z: 0.0009999871}
-  m_Center: {x: 0, y: -0.048153784, z: 0.0000002682209}
---- !u!114 &643829820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 643829812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f617c6cf94fbd564c858c3af19c83745, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1234501705}
-  GameOverStatus: 0
+  m_Size: {x: 1.0000002, y: 1.103242, z: 2.4341447}
+  m_Center: {x: 0, y: -0.048153803, z: -1.2165724}
 --- !u!1 &660763387
 GameObject:
   m_ObjectHideFlags: 0
@@ -2471,7 +2471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1234501698}
-  hitAction: 0
+  hitAction: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3249,6 +3249,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6489f2b5a56bc314d9cda0535fcd65ef, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6489f2b5a56bc314d9cda0535fcd65ef, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082271958561512970, guid: 6489f2b5a56bc314d9cda0535fcd65ef, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4884463582928921515, guid: 6489f2b5a56bc314d9cda0535fcd65ef, type: 3}
       propertyPath: m_Enabled
@@ -4537,7 +4545,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16792
+  m_Name: pb_Mesh93954
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

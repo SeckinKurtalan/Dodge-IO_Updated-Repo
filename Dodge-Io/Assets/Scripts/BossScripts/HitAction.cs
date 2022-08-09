@@ -5,17 +5,13 @@ using UnityEngine;
 public class HitAction : MonoBehaviour
 {
     public PlayerController player;
-    private bool hitStatus=false;
     public bool GameOverStatus = false;
-    void Start()
-    {
-        
-    }
+    public bool hitStatus = false;
+    private bool controllerActive = false;
 
-    // Update is called once per frame
-    void Update()
+
+    private void Update()
     {
-        HitControl();
     }
 
 
@@ -24,7 +20,7 @@ public class HitAction : MonoBehaviour
         if(Collider.gameObject.CompareTag("Player"))
         {
             Debug.Log("HitZone'a girildi");
-            InvokeRepeating("HitStatusTrueMaker", 0.5f, 0.0f);  // Burada alana girdiðinde direkt hasar yemesin, gecikmeli olarak baþlasýn istedim.
+            StartCoroutine("DamagePerSecond");// Player alana girdikten 1 saniye sonra hasar yiyecek ve her 1 saniyede bir yemeye devam edecek durduðu süre boyunca
         }
 
     }
@@ -33,35 +29,35 @@ public class HitAction : MonoBehaviour
     {
         if(Collider.gameObject.CompareTag("Player"))
         {
-            hitStatus = false;
+            StopCoroutine("DamagePerSecond");
         }
     }
 
 
     void GameOverCheck() // Gameover playerýn caný 0a düþtüðünde olacak.
     {
-        if ( player.health >= 0)
+        if ( player.health <= 0)
         {
             GameOverStatus = true;
         }
 
     }
-    void HitControl() // burada player alana girmiþ durumda ise 1 saniye aralýkla hasar vuracaðýz.
-    {
-        if (hitStatus)
-        {
-            InvokeRepeating("DamageToPlayer",0.0f ,1f);    //Player alanda durduðu her 1 saniye boyunca hasar yiyecek.
-        }
-    }
+
 
     void DamageToPlayer()
     {
         Debug.Log("Damage atýldý.");
-        player.health -= 35;
+        player.health -= 25;
     }
-    void HitStatusTrueMaker()
+
+    IEnumerator DamagePerSecond()
     {
-        hitStatus = true;
+        yield return new WaitForSeconds(1f);   //animasyonun uzunluðuna göre bekleme süresine ilerde ayar çekebiliriz.
+        DamageToPlayer();
+        yield return new WaitForSeconds(1f);
     }
+
+
+
 
 }
