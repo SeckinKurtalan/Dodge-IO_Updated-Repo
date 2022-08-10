@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2861c8ba0e131b42ad4018de4345f5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverControllerScript: {fileID: 0}
+  gameOverControllerScript: {fileID: 643829818}
   GameOverPanel: {fileID: 110277761}
 --- !u!114 &72628554
 MonoBehaviour:
@@ -248,11 +248,11 @@ MonoBehaviour:
   - {fileID: 1329178430}
   - {fileID: 612391607}
   guns:
-  - {fileID: 7669891615728542424, guid: fdb551c28b856404584fe51b463da57a, type: 3}
-  - {fileID: 165583532855660043, guid: 16d87fb702964af4587931e6e1cc2452, type: 3}
-  - {fileID: 7901696889582138967, guid: ee8fba867a644f74fa44388039f3b144, type: 3}
-  - {fileID: 6755978557525560033, guid: bd79dc36b63a1374aa01c1e5d6569814, type: 3}
-  - {fileID: 3732212691029725611, guid: 286cdf3fef7c57b4fb83190fbc8aa24e, type: 3}
+  - {fileID: 9050638470353400765, guid: f0697b783ce62b54daa2c170b73492d4, type: 3}
+  - {fileID: 9160522056296651806, guid: 98487817020fe214786cab244b026540, type: 3}
+  - {fileID: 2522823256258296094, guid: 4ee2c93b23a94514babbf05aa68fc289, type: 3}
+  - {fileID: 7581727724957580953, guid: 4cfd15162746ae449963078d0207fa31, type: 3}
+  - {fileID: 424799348437864997, guid: 5c68497783cdf204597ebf5133c0ef60, type: 3}
   spawnCount: 0
   spawnedGuns: []
   gunScaleMultiplyer: {x: 0, y: 0, z: 0}
@@ -610,17 +610,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9117457004658815396, guid: d458d1e05138b63499eb5aa2037b099f, type: 3}
   m_PrefabInstance: {fileID: 397204407}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &313737376 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6313071282381433612, guid: 3abf03b4286012147ab71f2146ef1a8b, type: 3}
-  m_PrefabInstance: {fileID: 518193723}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &340577281
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,29 +639,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ExcludedPropertiesInInspector:
-  - m_Script
-  m_LockStageInInspector: 
-  m_StreamingVersion: 20170927
-  m_Priority: 10
-  m_StandbyUpdate: 2
-  m_LookAt: {fileID: 1791513547}
-  m_Follow: {fileID: 1791513547}
-  m_Lens:
-    FieldOfView: 50
-    OrthographicSize: 10
-    NearClipPlane: 0.1
-    FarClipPlane: 5000
-    Dutch: 0
-    LensShift: {x: 0, y: 0}
-  m_Transitions:
-    m_BlendHint: 0
-    m_InheritPosition: 0
-    m_OnCameraLive:
-      m_PersistentCalls:
-        m_Calls: []
-  m_LegacyBlendHint: 0
-  m_ComponentOwner: {fileID: 1656562409}
 --- !u!4 &340577283
 Transform:
   m_ObjectHideFlags: 0
@@ -2379,6 +2345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1234501705}
   GameOverStatus: 0
+  hitStatus: 0
 --- !u!65 &643829819
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3000,28 +2967,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 0.2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!850595691 &970069582
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -4135,16 +4080,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6043bde05a7fc4cba197d06915c1e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damping: {x: 0.1, y: 0, z: 0.07}
-  ShoulderOffset: {x: 0, y: 16.44, z: -2.18}
-  VerticalArmLength: 0
-  CameraSide: 0
-  CameraDistance: 0
-  CameraCollisionFilter:
-    serializedVersion: 2
-    m_Bits: 0
-  IgnoreTag: 
-  CameraRadius: 0.001
 --- !u!114 &1656562412
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -4545,7 +4480,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh93954
+  m_Name: pb_Mesh18272
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4732,29 +4667,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ExcludedPropertiesInInspector:
-  - m_Script
-  m_LockStageInInspector: 
-  m_StreamingVersion: 20170927
-  m_Priority: 10
-  m_StandbyUpdate: 2
-  m_LookAt: {fileID: 58453040}
-  m_Follow: {fileID: 58453040}
-  m_Lens:
-    FieldOfView: 40
-    OrthographicSize: 10
-    NearClipPlane: 0.1
-    FarClipPlane: 5000
-    Dutch: 0
-    LensShift: {x: 0, y: 0}
-  m_Transitions:
-    m_BlendHint: 0
-    m_InheritPosition: 0
-    m_OnCameraLive:
-      m_PersistentCalls:
-        m_Calls: []
-  m_LegacyBlendHint: 0
-  m_ComponentOwner: {fileID: 2040985710}
 --- !u!4 &2027521737
 Transform:
   m_ObjectHideFlags: 0
@@ -4814,16 +4726,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6043bde05a7fc4cba197d06915c1e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damping: {x: 0, y: 0, z: 0}
-  ShoulderOffset: {x: 10.56, y: 3.28, z: 0}
-  VerticalArmLength: 0.4
-  CameraSide: 1
-  CameraDistance: 2
-  CameraCollisionFilter:
-    serializedVersion: 2
-    m_Bits: 0
-  IgnoreTag: 
-  CameraRadius: 0.2
 --- !u!114 &2040985713
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -4874,12 +4776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 430322eba2eed854c98c3ea871dc6c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerControllerScript: {fileID: 1234501705}
-  isHittible: 1
-  hitTimeGap: 1
-  damageAmount: 3
-  theFunctionStartGapAfterStartingTheGame: 1
-  FillImage: {fileID: 313737376}
 --- !u!65 &2137695774
 BoxCollider:
   m_ObjectHideFlags: 0
