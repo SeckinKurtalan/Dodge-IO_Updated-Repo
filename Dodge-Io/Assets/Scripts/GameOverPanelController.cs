@@ -5,7 +5,20 @@ using UnityEngine.SceneManagement;
 public class GameOverPanelController : MonoBehaviour
 {
     [SerializeField] HitAction gameOverControllerScript;
+    
     [SerializeField] GameObject GameOverPanel;
+
+    [SerializeField] Scene mainScene;
+
+    [SerializeField] Scene duplicatedScene;
+
+    string SwitchingScene;
+    
+    
+    void Start()
+    {
+        SwitchingScene = "SampleScene";
+    }
     
     void Update()
     {
@@ -17,6 +30,9 @@ public class GameOverPanelController : MonoBehaviour
 
     public void OnReplayButtonClick()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SwitchingScene);
     }
+
+    
+    
 }

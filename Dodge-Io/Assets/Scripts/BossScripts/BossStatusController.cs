@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BossStatusController : MonoBehaviour
 {
@@ -9,8 +10,9 @@ public class BossStatusController : MonoBehaviour
     public Vector3 rageModeBody;
     public int damageToBoss = 0;
 
-    
+    public UnityEvent bossDies;
 
+    bool onBossDied = true;
     void Start()
     {
         rageModeBody.x = bossBody.transform.localScale.x; // Burada Rage haldeki bedenin deðerleri oluþturuluyor.
@@ -24,7 +26,7 @@ public class BossStatusController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        BossDieCheck();
         BossRageCheck();
     }
 
@@ -37,4 +39,15 @@ public class BossStatusController : MonoBehaviour
         }
     }
     
+    void BossDieCheck()
+    {
+        
+        if(health <= 0 && onBossDied)
+        {
+            bossDies.Invoke();
+            onBossDied = false;
+        }
+    }
+
+
 }
